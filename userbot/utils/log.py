@@ -54,7 +54,7 @@ else:
 async def autopilot():
 
     if BOTLOG_CHATID and str(BOTLOG_CHATID).startswith("-100"):
-    channel = BOTLOG_CHATID
+       channel = BOTLOG_CHATID
     if channel:
         try:
             chat = await bot.get_entity(channel)
