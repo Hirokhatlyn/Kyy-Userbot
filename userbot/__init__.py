@@ -140,7 +140,7 @@ API_HASH = str(os.environ.get("API_HASH") or None)
 STRING_SESSION = os.environ.get("STRING_SESSION", "")
 
 # Logging channel/group ID configuration.
-BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID") or None)
+BOTLOG_CHATID = os.environ.get("BOTLOG_CHATID") or None
 
 
 # Handler Userbot
