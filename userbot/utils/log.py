@@ -124,7 +124,7 @@ async def autopilot():
                 LOGS.info("Kesalahan saat mempromosikan asisten di grup Log..")
                 LOGS.exception(er)
     if isinstance(chat.photo, ChatPhotoEmpty):
-        photo = "userbot/files/20211115_142004.jpg"
+        photo = "resources/extras/IMG_20211216_160240_756.jpg"
         ll = await bot.upload_file(photo)
         try:
             await bot(
