@@ -44,6 +44,9 @@ except Exception as e:
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
+LOGS.info("Initialising...")
+bot.loop.run_until_complete(autopilot())
+
 LOGS.info(
     f"Jika {ALIVE_NAME} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/NastySupportt")
 LOGS.info(
@@ -61,7 +64,6 @@ async def check_alive():
     except BaseException:
         pass
 
-bot.loop.run_until_complete(autopilot())
 bot.loop.run_until_complete(check_alive())
 if not BOT_TOKEN:
     LOGS.info(
