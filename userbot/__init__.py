@@ -820,3 +820,9 @@ with bot:
                 )
             else:
                 f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+
+    except BaseException:
+        LOGS.info(
+            "Mode Inline Bot Mu Nonaktif. "
+            "Untuk Mengaktifkannya, Silahkan Pergi Ke @BotFather Lalu, Settings Bot > Pilih Mode Inline > Turn On. ")
+        quit(1)
