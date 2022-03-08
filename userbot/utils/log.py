@@ -50,8 +50,8 @@ if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
 else:
     app = None
 
-async def autopilot():
 
+async def autopilot():
 
     if BOTLOG_CHATID and str(BOTLOG_CHATID).startswith("-100"):
     channel = BOTLOG_CHATID
@@ -63,7 +63,8 @@ async def autopilot():
             channel = None
     if not channel:
         if bot._bot:
-            LOGS.info("'BOTLOG_CHATID' tidak ditemukan! Tambahkan untuk digunakan 'BOTMODE'")
+            LOGS.info(
+                "'BOTLOG_CHATID' tidak ditemukan! Tambahkan untuk digunakan 'BOTMODE'")
 
             sys.exit()
         LOGS.info("Membuat Grup Log untuk Anda!")
@@ -79,7 +80,6 @@ async def autopilot():
             LOGS.info(
                 "Anda Berada di Terlalu Banyak Saluran & Grup, Tinggalkan Beberapa Dan Mulai Ulang Bot"
             )
-
 
             sys.exit(1)
         except BaseException as er:
