@@ -23,8 +23,7 @@ from userbot import (
     call_py,
 )
 from userbot.modules import ALL_MODULES
-from userbot.utils import autobot
-from userbot.utils.log import autopilot
+from userbot.utils import autobot, autopilot
 
 try:
     bot.start()
