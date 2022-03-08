@@ -44,7 +44,8 @@ except Exception as e:
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-LOGS.info("Initialising...")
+if not BOTLOG_CHATID:
+    LOGS.info("Initialising...")
 bot.loop.run_until_complete(autopilot())
 
 LOGS.info(
@@ -58,7 +59,7 @@ async def check_alive():
         if BOTLOG_CHATID != 0:
             await bot.send_message(BOTLOG_CHATID, "✨ **Kyy Userbot Berhasil Diaktifkan**!!\n━━━━━━━━━━━━━━━\n➠ **Userbot Version** - 3.1.0@Kyy-Userbot\n➠ **Ketik** `.ping` **Untuk Mengecheck Bot**\n━━━━━━━━━━━━━━━\n➠ **Powered By:** @NastyProject ")
     except Exception as e:
-        LOGS.info(str(e))
+       LOGS.info(str(e))
     try:
         await bot(Addbot(int(BOTLOG_CHATID), [BOT_USERNAME]))
     except BaseException:
