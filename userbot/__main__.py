@@ -24,6 +24,7 @@ from userbot import (
 )
 from userbot.modules import ALL_MODULES
 from userbot.utils import autobot
+from userbot.utils.log import autopilot
 
 try:
     bot.start()
@@ -61,6 +62,7 @@ async def check_alive():
     except BaseException:
         pass
 
+bot.loop.run_until_complete(autopilot())
 bot.loop.run_until_complete(check_alive())
 if not BOT_TOKEN:
     LOGS.info(
