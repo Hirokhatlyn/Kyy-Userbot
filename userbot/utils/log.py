@@ -3,38 +3,25 @@
 # Recode by farizjs
 # <t.me/TheFlicksUserbot>
 
-import asyncio
-import importlib
 import logging
 import sys
-from pathlib import Path
-from random import randint
 import os
-import random
-import time
-from random import randint
 
 from telethon.errors import (
-    BotMethodInvalidError,
-    ChannelPrivateError,
     ChannelsTooMuchError,
     ChatAdminRequiredError,
     UserNotParticipantError,
 )
-from telethon.tl.custom import Button
 from telethon.tl.functions.channels import (
     CreateChannelRequest,
     EditAdminRequest,
     EditPhotoRequest,
     InviteToChannelRequest,
-    JoinChannelRequest,
 )
-from telethon.tl.functions.contacts import UnblockRequest
 from telethon.tl.types import (
     ChatAdminRights,
     ChatPhotoEmpty,
     InputChatUploadedPhoto,
-    InputMessagesFilterDocument,
 )
 from telethon.utils import get_peer_id
 
@@ -54,7 +41,7 @@ else:
 async def autopilot():
 
     if BOTLOG_CHATID and str(BOTLOG_CHATID).startswith("-100"):
-       channel = BOTLOG_CHATID
+        channel = BOTLOG_CHATID
     if channel:
         try:
             chat = await bot.get_entity(channel)
